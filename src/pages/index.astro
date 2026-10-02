@@ -6,20 +6,21 @@ const pageTitle = "Samiul Muztaba — Portfolio"
 <BaseLayout pageTitle={pageTitle}>
 	<div class="wrapper">
 
-		<pre class="name-banner">
+		<pre class="name-banner"> 
 ╔═════════════════════════════════════╗ 
 ║  Hi, I'm                            ║ 
 ║                                     ║ 
-║   <span>█████╗ ██████╗ ██╗  ██╗ ██████╗   </span>║
-║  <span>██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗  </span>║ 
-║  <span>███████║██████╔╝█████╔╝ ██║   ██║  </span>║ 
-║  <span>██╔══██║██╔══██╗██╔═██╗ ██║   ██║  </span>║ 
-║  <span>██║  ██║██║  ██║██║  ██╗╚██████╔╝  </span>║
-║  <span>╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   </span>║
+║   <span class="boot-ascii">█████╗ ██████╗ ██╗  ██╗ ██████╗   </span>║
+║  <span class="boot-ascii">██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗  </span>║ 
+║  <span class="boot-ascii">███████║██████╔╝█████╔╝ ██║   ██║  </span>║ 
+║  <span class="boot-ascii">██╔══██║██╔══██╗██╔═██╗ ██║   ██║  </span>║ 
+║  <span class="boot-ascii">██║  ██║██║  ██║██║  ██╗╚██████╔╝  </span>║
+║  <span class="boot-ascii">╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   </span>║
 ║                                     ║ 
 ╚═════════════════════════════════════╝</pre>
 
 	<div class="crt-computer">
+        <div class="desk-wrapper">
         <pre class="computer-art">
     ___________________
    |.-----------------.|
@@ -33,10 +34,19 @@ const pageTitle = "Samiul Muztaba — Portfolio"
     `)__ ____________('
     [===          -- o ]--.
     __'-----------------'__ 
-[::::::::::::::::::::::: :::] 
-  `""'""""""""""""""""'""""`
+[::::::::::::::::::::::: :::]
+  `""'""""""""""""""""'""""` 
     </pre>
-    <div class="screen">
+    <pre class="coffee-ascii">
+ ( (
+  ) )
+........
+|      |]
+\      /
+ `----'
+    </pre>
+    </div>
+    <div class="screen boot-screen">
         <div class="terminal">
             <div class="terminal-line">
                 <span class="prompt">arko@portfolio:~$</span> help
@@ -100,6 +110,19 @@ const pageTitle = "Samiul Muztaba — Portfolio"
 		margin-top: 4rem;
         position: relative;
 	}
+
+    .desk-wrapper {
+        display: flex;
+        gap: 0.6rem;
+    }
+
+    .coffee-ascii{
+        /* font-family: monospace; */
+        color: var(--color-text);
+        font-size: 0.8rem;
+        align-self: flex-end;
+        margin-bottom: 3rem;
+    }
 
     .help-text{
         font-size: 90%;
@@ -179,5 +202,66 @@ const pageTitle = "Samiul Muztaba — Portfolio"
 
     .prompt, .help span {
         color: var(--color-phosphor);
+    }
+
+    /* the ASCII ANIMATION! */
+    .boot-ascii {
+        animation: ascii-boot 900ms steps(8, end) both;
+    }
+
+    @keyframes ascii-boot { /* for a top to bottom load */
+        from {
+            clip-path: inset(0 0 100% 0); /*set 100% for bottom for the top-bottom load anim */
+        }
+
+        to {
+            clip-path: inset(0 0 0 0); /* to nothing is invisibile */
+        }
+    }
+
+    /* computer screen animation */
+    .boot-screen {
+        opacity: 0;
+        transform: scaleY(0.96);
+        transform-origin: center;
+        animation:
+            screen-on 180ms steps(2, end) 950ms forwards,
+            screen-flicker 300ms steps(4, end) 1130ms;
+    }
+
+    @keyframes screen-on {
+        0% {
+            opacity: 0;
+            transform: scaleY(0.96);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        100% {
+            opacity: 0.92;
+            transform: scaleY(1);
+        }
+    }
+
+    @keyframes screen-flicker {
+        0%,
+        100% {
+            opacity: 0.92;
+        }
+
+        25% {
+            opacity: 0.35;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        75% {
+            opacity: 0.55;
+        }
     }
 </style>
