@@ -10,21 +10,22 @@ const pageTitle = "Samiul Muztaba — Portfolio"
 ╔═════════════════════════════════════╗ 
 ║  Hi, I'm                            ║ 
 ║                                     ║ 
-║   <span style="color: lime">█████╗ ██████╗ ██╗  ██╗ ██████╗   </span>║
-║  <span style="color: lime">██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗  </span>║ 
-║  <span style="color: lime">███████║██████╔╝█████╔╝ ██║   ██║  </span>║ 
-║  <span style="color: lime">██╔══██║██╔══██╗██╔═██╗ ██║   ██║  </span>║ 
-║  <span style="color: lime">██║  ██║██║  ██║██║  ██╗╚██████╔╝  </span>║
-║  <span style="color: lime">╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   </span>║
+║   <span>█████╗ ██████╗ ██╗  ██╗ ██████╗   </span>║
+║  <span>██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗  </span>║ 
+║  <span>███████║██████╔╝█████╔╝ ██║   ██║  </span>║ 
+║  <span>██╔══██║██╔══██╗██╔═██╗ ██║   ██║  </span>║ 
+║  <span>██║  ██║██║  ██║██║  ██╗╚██████╔╝  </span>║
+║  <span>╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   </span>║
 ║                                     ║ 
 ╚═════════════════════════════════════╝</pre>
+
 		<pre class="crt-computer">
     ___________________
    |.-----------------.|
    ||<span class="in-comp">arko@portfolio:~$ help</span>    ||
    ||                 ||
    ||                 ||
-   ||<span class="in-comp">~$</span><input style="width: 52%; background: none; border: none; color: white; font-family: monoscape;" type="text">||
+   ||<span class="in-comp">~$</span><input type="text">||
    ||                 ||
    |'-----------------'|
     `)__ ____________('
@@ -42,25 +43,43 @@ const pageTitle = "Samiul Muztaba — Portfolio"
 		justify-content: center;
 		gap: 2rem;
 	}
-	.name-banner {
-		color: white;
-		/* font-family: monoscape; */
-		font-size: 2rem;
+
+	.name-banner,
+	.crt-computer {
+		/* font-family: "Courier New", monospace; */
+		font-size: 1.8rem;
 		line-height: 1;
 		letter-spacing: 0;
+	}
+
+	.name-banner {
+		color: var(--color-text);
+	}
+
+	.name-banner span {
+		color: var(--color-phosphor);
 	}
 
 	.crt-computer {
-		color: white;
-		/* font-family: monoscape; */
-		font-size: 2rem;
-		line-height: 1;
-		letter-spacing: 0;
-		margin-top: 10rem;
+		color: var(--color-hardware);
+		margin-top: 4rem;
 	}
 
 	.in-comp {
-		font-size: 59.58%;
+		color: var(--color-phosphor);
+		font-size: 54%;
+        font-family: "IBM Plex Mono"
 	}
 
+	.crt-computer input {
+		width: 52%;
+		background: none;
+		border: none;
+		color: var(--color-phosphor);
+		font-family: "Courier New", monospace;
+		font-size: 59.58%;
+		outline: none;
+		caret-color: var(--color-phosphor);
+        caret-shape: block;
+	}
 </style>

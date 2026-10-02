@@ -1,43 +1,83 @@
 ---
 
 ---
+
 <div class="navbar">
     <div class="logo">
         <a href="/">arko@portfolio:~$</a>
     </div>
-    <div class="nav-links">
+
+    <nav class="nav-links" aria-label="Main navigation">
         <a href="#whoami">[whoami]</a>
         <a href="#skills">[skills]</a>
         <a href="#projects">[projects]</a>
         <a href="#achievements">[achievements]</a>
-    </div>
+    </nav>
 </div>
 
 <style>
     .navbar {
         display: flex;
         justify-self: center;
+        align-items: center;
         gap: 3rem;
         margin: 2.5rem 0;
-        font-size: 1.2rem;
-    }
 
-    .nav-links {
-        display: flex;
-        gap: 1rem;
+        font-family: var(--font-terminal);
+        font-size: 1.05rem;
     }
 
     .logo {
         display: flex;
+        white-space: nowrap;
     }
 
-    a {
-        text-decoration: none;
-        color: white;
-        padding: 4px;
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
-    a:hover {
-        color: black;
-        background-color: white;
+
+    .navbar a {
+        position: relative;
+        padding: 0.3rem 0.45rem;
+
+        color: var(--color-text-muted);
+        text-decoration: none;
+
+        transition:
+            color 120ms ease,
+            background-color 120ms ease;
+    }
+
+    .logo a {
+        color: var(--color-text);
+    }
+
+    .nav-links a:hover {
+        color: var(--color-bg);
+        background-color: var(--color-phosphor);
+    }
+
+    .nav-links a:focus-visible,
+    .logo a:focus-visible {
+        outline: 2px solid var(--color-phosphor);
+        outline-offset: 3px;
+    }
+
+    .logo a:hover {
+        color: var(--color-phosphor);
+    }
+
+    @media (max-width: 800px) {
+        .navbar {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 </style>

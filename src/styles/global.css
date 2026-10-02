@@ -1,9 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  color-scheme: dark;
+
+  /* Foundation */
+  --color-bg: #0D0F0C;
+  --color-surface: #171A15;
+  --color-raised: #22271F;
+  --color-border: #30372D;
+
+  /* Identity */
+  --color-phosphor: #80FF80;
+  --color-hardware: #D8C8A8;
+
+  /* Typography */
+  --color-text: #E7E4D9;
+  --color-text-muted: #92998B;
+
+  /* Status */
+  --color-error: #E47767;
+  --color-success: #A8C7A0;
+
+  /* Interaction */
+  --color-focus: var(--color-phosphor);
+  --color-link: var(--color-phosphor);
+  --color-selection-bg: var(--color-phosphor);
+  --color-selection-text: var(--color-bg);
+
+  /* CRT effects */
+  --crt-glow: 0 0 8px rgb(128 255 128 / 12%);
+  --crt-glow-strong: 0 0 14px rgb(128 255 128 / 24%);
+
+  /* Structure */
+  --border-width: 1px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+}
+
+::selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-bg);
+} /* this is to change the selection color */
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+} /* when you press tab, the outline looks like this */
+
 html {
-    background-color: black;
-    font-family: monospace;
-    color: white;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "IBM Plex Mono";
 }
 
 body {
-    height: 100vh;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-link);
+}
+
+button {
+  font: inherit;
 }
