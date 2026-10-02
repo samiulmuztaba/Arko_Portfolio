@@ -4,20 +4,20 @@ const pageTitle = "Samiul Muztaba — Portfolio"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class="wrapper">
+	<div class="hero">
 
 		<pre class="name-banner"> 
-╔═════════════════════════════════════╗ 
-║  Hi, I'm                            ║ 
-║                                     ║ 
-║   <span class="boot-ascii">█████╗ ██████╗ ██╗  ██╗ ██████╗   </span>║
-║  <span class="boot-ascii">██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗  </span>║ 
-║  <span class="boot-ascii">███████║██████╔╝█████╔╝ ██║   ██║  </span>║ 
-║  <span class="boot-ascii">██╔══██║██╔══██╗██╔═██╗ ██║   ██║  </span>║ 
-║  <span class="boot-ascii">██║  ██║██║  ██║██║  ██╗╚██████╔╝  </span>║
-║  <span class="boot-ascii">╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   </span>║
-║                                     ║ 
-╚═════════════════════════════════════╝</pre>
+ ╔═════════════════════════════════════╗ 
+ ║  Hi, I'm                            ║ 
+ ║                                     ║ 
+ ║   <span class="boot-ascii">█████╗ ██████╗ ██╗  ██╗ ██████╗   </span>║
+ ║  <span class="boot-ascii">██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗  </span>║ 
+ ║  <span class="boot-ascii">███████║██████╔╝█████╔╝ ██║   ██║  </span>║ 
+ ║  <span class="boot-ascii">██╔══██║██╔══██╗██╔═██╗ ██║   ██║  </span>║ 
+ ║  <span class="boot-ascii">██║  ██║██║  ██║██║  ██╗╚██████╔╝  </span>║
+ ║  <span class="boot-ascii">╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   </span>║
+ ║                                     ║ 
+ ╚═════════════════════════════════════╝</pre>
 
 	<div class="crt-computer">
         <div class="desk-wrapper">
@@ -33,7 +33,7 @@ const pageTitle = "Samiul Muztaba — Portfolio"
    |'-----------------'|
     `)__ ____________('
     [===          -- o ]--.
-    __'-----------------'__ 
+   _'-----------------'__ 
 [::::::::::::::::::::::: :::]
   `""'""""""""""""""""'""""` 
     </pre>
@@ -48,31 +48,11 @@ const pageTitle = "Samiul Muztaba — Portfolio"
     </div>
     <div class="screen boot-screen">
         <div class="terminal">
-            <div class="terminal-line">
-                <span class="prompt">arko@portfolio:~$</span> help
-            </div>
+            <div class="terminal-content"></div>
 
-            <div class="help-text">
-                <div>
-                    <span>whoami - who I am</span>
-                </div>
-                <div>
-                    <span>skills</span> - what I can do
-                </div>
-                <div>
-                    <span>projects</span> - what I've done with what I can do
-                </div>
-                <div>
-                    <span>achievements</span> - what I've achieved
-                </div>
-                <div>
-                    <span>blog</span> - my articles
-                </div>
-            </div>
             <div class="input-line">
                 <span class="prompt">~$ </span>
                 <input type="text" aria-label="Terminal command">
-                <br>
             </div>
         </div>
     </div>
@@ -83,7 +63,7 @@ const pageTitle = "Samiul Muztaba — Portfolio"
 </BaseLayout>
 
 <style>
-	.wrapper {
+	.hero {
 		display: flex;
 		justify-content: center;
 		gap: 2rem;
@@ -122,12 +102,6 @@ const pageTitle = "Samiul Muztaba — Portfolio"
         font-size: 0.8rem;
         align-self: flex-end;
         margin-bottom: 3rem;
-    }
-
-    .help-text{
-        font-size: 90%;
-        color: var(--color-text-muted);
-        padding: 0.5rem 1rem;
     }
 
 	.input-line { 
@@ -171,20 +145,20 @@ const pageTitle = "Samiul Muztaba — Portfolio"
     }
 
     .screen::after {
-    content: "";
-    position: absolute;
-    inset: 0;
+        content: "";
+        position: absolute;
+        inset: 0;
 
-    pointer-events: none;
+        pointer-events: none;
 
-    background:
-        repeating-linear-gradient(
-            to bottom,
-            transparent 0,
-            transparent 2px,
-            rgb(128 255 128 / 3%) 3px
-        );
-}
+        background:
+            repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 2px,
+                rgb(128 255 128 / 3%) 3px
+            );
+    }
 
     .screen::-webkit-scrollbar {
         display: none;
@@ -196,8 +170,6 @@ const pageTitle = "Samiul Muztaba — Portfolio"
         color: var(--color-text);
         font-size: 0.85rem;
         line-height: 1.2;
-
-        
     }
 
     .prompt, .help span {
@@ -264,4 +236,15 @@ const pageTitle = "Samiul Muztaba — Portfolio"
             opacity: 0.55;
         }
     }
+
+    @keyframes terminal-line-in {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 </style>
+
+<script>
+    import "../scripts/terminal.js";
+</script>

@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   color-scheme: dark;
 
   /* Foundation */
-  --color-bg: #0D0F0C;
-  --color-surface: #171A15;
-  --color-raised: #22271F;
-  --color-border: #30372D;
+  --color-bg: #0d0f0c;
+  --color-surface: #171a15;
+  --color-raised: #22271f;
+  --color-border: #30372d;
 
   /* Identity */
-  --color-phosphor: #80FF80;
-  --color-hardware: #D8C8A8;
+  --color-phosphor: #80ff80;
+  --color-hardware: #d8c8a8;
 
   /* Typography */
-  --color-text: #E7E4D9;
-  --color-text-muted: #92998B;
+  --color-text: #e7e4d9;
+  --color-text-muted: #92998b;
 
   /* Status */
-  --color-error: #E47767;
-  --color-success: #A8C7A0;
+  --color-error: #e47767;
+  --color-success: #a8c7a0;
 
   /* Interaction */
   --color-focus: var(--color-phosphor);
@@ -66,4 +66,20 @@ a {
 
 button {
   font: inherit;
+}
+
+.help-text {
+  font-size: 90%;
+  color: var(--color-text-muted);
+  padding: 0.5rem 1rem;
+}
+
+.terminal-content {
+  min-height: 0;
+}
+
+.help-line {
+  opacity: 0;
+  transform: translateX(-4px);
+  animation: terminal-line-in 160ms steps(2, end) forwards;
 }
