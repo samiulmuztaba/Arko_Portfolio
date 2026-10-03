@@ -88,3 +88,8 @@ button {
 .prompt, .help span {
   color: var(--color-phosphor);
 }
+
+.terminal-section {
+  margin-top: 3.5rem;
+  padding-left: 1rem; 
+}

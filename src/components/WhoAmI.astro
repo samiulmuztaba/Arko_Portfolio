@@ -1,14 +1,28 @@
 ---
 import SectionH1 from "./SectionH1.astro";
 ---
-<div id="whoami">
+<div id="whoami" class="terminal-section">
     <SectionH1 heading="whoami"/>
+    
     <div class="section-wrapper">
         <div class="l-wrapper">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, quas. Optio maiores corrupti vitae nemo animi culpa accusantium eos debitis ipsam, saepe aperiam repellendus possimus porro iure dolore sequi ea iusto quasi et temporibus earum natus inventore! Recusandae maxime, in, maiores nisi aperiam autem praesentium quis labore odit, excepturi inventore?</p>
-            <p>My other hobbies: [<button class="hobby">"speedcubing"</button>, <button class="hobby">"reading"</button>, <button class="hobby">"chess"</button>, <button class="hobby">"gaming"</button>]</p>
+            <p class="manifesto">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, quas. Optio maiores corrupti vitae nemo animi culpa accusantium eos debitis ipsam, saepe aperiam repellendus possimus porro iure dolore sequi ea iusto quasi et temporibus earum natus inventore! Recusandae maxime, in, maiores nisi aperiam autem praesentium quis labore odit, excepturi inventore?
+            </p>
+            
+            <div class="hobbies-list">
+                <span class="sub-label">OTHER_HOBBIES =</span>
+                <span class="array-syntax">[</span>
+                <button class="hobby">"speedcubing"</button><span class="comma">,</span>
+                <button class="hobby">"reading"</button><span class="comma">,</span>
+                <button class="hobby">"chess"</button><span class="comma">,</span>
+                <button class="hobby">"gaming"</button>
+                <span class="array-syntax">]</span>
+            </div>
         </div>
-        <pre style="color: var(--color-phosphor);">
+        
+        <div class="ascii-aside">
+            <pre class="cowsay-box">
  ___________________________
 < "?oom"[::-1].capitalize() >
  ---------------------------
@@ -17,24 +31,85 @@ import SectionH1 from "./SectionH1.astro";
             (__)\       )\/\
                 ||----w |
                 ||     ||
-        </pre>
+            </pre>
+        </div>
     </div>
 </div>
 
 <style>
     .section-wrapper {
         display: flex;
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-top: 1.5rem;
     }
-    
+
+    @media (min-width: 768px) {
+        .section-wrapper {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 5rem;
+        }
+
+        .l-wrapper {
+            flex: 1.4;
+        }
+
+        .ascii-aside {
+            flex: 0.8;
+            margin-top: 0.5rem;
+        }
+    }
+
+    .manifesto {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-text);
+        text-align: justify;
+        margin: 0 0 2rem 0;
+    }
+
+    .hobbies-list {
+        font-size: 1rem;
+        color: var(--color-text);
+    }
+
+    .sub-label {
+        color: var(--color-hardware);
+        margin-right: 0.5rem;
+    }
+
+    .array-syntax {
+        color: var(--color-text-muted);
+    }
+
+    .comma {
+        color: var(--color-border);
+        margin-right: 0.25rem;
+    }
+
     .hobby {
         background: none;
         border: none;
+        padding: 0;
+        font-family: inherit;
+        font-size: inherit;
+        color: var(--color-phosphor);
         cursor: pointer;
+        transition: color 0.1s ease;
     }
 
     .hobby:hover {
-        background-color: var(--color-phosphor);
         color: var(--color-bg);
+        background-color: var(--color-phosphor);
+    }
+
+    .cowsay-box {
+        color: var(--color-phosphor);
+        margin: 0;
+        font-family: monospace;
+        line-height: 1.2;
+        font-size: 0.9rem;
+        opacity: 0.85;
     }
 </style>
