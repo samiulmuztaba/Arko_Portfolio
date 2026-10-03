@@ -1,4 +1,56 @@
 ---
 const { heading } = Astro.props
 ---
-<h1><span class="prompt">~$ </span>{heading}</h1> <!-- as .prompt is in global.css -->
+<h1>
+    <span class="prompt">~$ </span>{heading}<span class="cursor" aria-hidden="true"></span>
+</h1>
+
+<style>
+    .cursor {
+        display: inline-block;
+        width: 0.55em;
+        height: 0.85em;
+        margin-left: 0.35em;
+        vertical-align: -0.05em;
+        background-color: var(--color-phosphor);
+        visibility: hidden;
+    }
+
+    h1.is-active .cursor {
+        visibility: visible;
+        animation: cursor-blink 1s step-end infinite;
+    }
+
+    @keyframes cursor-blink {
+        50% {
+            visibility: hidden;
+        }
+    }
+</style>
+
+<script>
+    const sections = Array.from(
+        document.querySelectorAll<HTMLElement>(".terminal-section"),
+    );
+
+    function updateActiveHeading() {
+        const scrollPoint = window.innerHeight * 0.35;
+        let activeSection: HTMLElement | undefined;
+
+        for (const section of sections) {
+            if (section.getBoundingClientRect().top <= scrollPoint) {
+                activeSection = section;
+            }
+        }
+
+        for (const section of sections) {
+            section
+                .querySelector("h1")
+                ?.classList.toggle("is-active", section === activeSection);
+        }
+    }
+
+    updateActiveHeading();
+    window.addEventListener("scroll", updateActiveHeading, { passive: true });
+    window.addEventListener("resize", updateActiveHeading);
+</script>
