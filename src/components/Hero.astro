@@ -1,0 +1,238 @@
+---
+---
+
+<div class="hero">
+
+		<pre class="name-banner"> 
+╔═════════════════════════════════════╗
+║  Hi, I'm                            ║
+║                                     ║
+║   <span class="boot-ascii">█████╗ ██████╗ ██╗  ██╗ ██████╗   </span>║
+║  <span class="boot-ascii">██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗  </span>║
+║  <span class="boot-ascii">███████║██████╔╝█████╔╝ ██║   ██║  </span>║
+║  <span class="boot-ascii">██╔══██║██╔══██╗██╔═██╗ ██║   ██║  </span>║
+║  <span class="boot-ascii">██║  ██║██║  ██║██║  ██╗╚██████╔╝  </span>║
+║  <span class="boot-ascii">╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   </span>║
+║                                     ║
+╚═════════════════════════════════════╝</pre>
+
+	<div class="crt-computer">
+        <div class="desk-wrapper">
+        <pre class="computer-art">
+    ___________________
+   |.-----------------.|
+   ||                 ||
+   ||                 ||
+   ||                 ||
+   ||                 ||
+   ||                 ||
+   ||                 ||
+   |'-----------------'|
+    `)__ ____________('
+    [===          -- o ]--.
+   _'-----------------'__ 
+[::::::::::::::::::::::: :::]
+  `""'""""""""""""""""'""""` 
+    </pre>
+    <pre class="coffee-ascii">
+ ( (
+  ) )
+........
+|      |]
+\      /
+ `----'
+    </pre>
+    </div>
+    <div class="screen boot-screen">
+        <div class="terminal">
+            <div class="terminal-content"></div>
+
+            <div class="input-line">
+                <span class="prompt">~$ </span>
+                <input type="text" aria-label="Terminal command">
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</div>
+
+<style>
+    .hero {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+    }
+
+    .name-banner,
+    .crt-computer {
+        /* font-family: "Courier New", monospace; */
+        font-size: 1.8rem;
+        line-height: 1;
+        letter-spacing: 0;
+    }
+
+    .name-banner {
+        color: var(--color-text);
+    }
+
+    .name-banner span {
+        color: var(--color-phosphor);
+    }
+
+    .crt-computer {
+        color: var(--color-hardware);
+        margin-top: 4rem;
+        position: relative;
+    }
+
+    .desk-wrapper {
+        display: flex;
+        gap: 0.6rem;
+    }
+
+    .coffee-ascii{
+        /* font-family: monospace; */
+        color: var(--color-text);
+        font-size: 0.8rem;
+        align-self: flex-end;
+        margin-bottom: 3rem;
+    }
+
+    .input-line { 
+        display: flex; 
+        align-items: center; 
+        margin-top: 0.35rem; 
+        gap:0.2rem;
+    }
+        
+    .input-line input { 
+        flex: 1; 
+        min-width: 0; 
+        padding: 0; 
+        border: none; 
+        outline: none; 
+        background: transparent; 
+        color: var(--color-phosphor); 
+        font-family: var(--font-terminal); 
+        font-size: inherit; 
+        line-height: inherit; 
+        caret-color: var(--color-phosphor); 
+        caret-shape: block; 
+    }
+    .screen {
+        width: 15rem;
+        height: 10rem;
+
+        padding: 1.25rem;
+
+        position: absolute;
+        background: var(--color-bg);
+
+        top: 4.5rem;
+        left: 4.5rem;
+
+        box-shadow:
+            inset 0 0 0 2px var(--color-border),
+            /* inset 0 0 25px rgb(128 255 128 / 5%); */
+            
+        overflow: scroll;
+    }
+
+    .screen::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        pointer-events: none;
+
+        background:
+            repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 2px,
+                rgb(128 255 128 / 3%) 3px
+            );
+    }
+
+    .screen::-webkit-scrollbar {
+        display: none;
+    }
+
+    .terminal {
+        height: 100%;
+
+        color: var(--color-text);
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+
+    /* the ASCII ANIMATION! */
+    .boot-ascii {
+        animation: ascii-boot 900ms steps(8, end) both;
+    }
+
+    @keyframes ascii-boot { /* for a top to bottom load */
+        from {
+            clip-path: inset(0 0 100% 0); /*set 100% for bottom for the top-bottom load anim */
+        }
+
+        to {
+            clip-path: inset(0 0 0 0); /* to nothing is invisibile */
+        }
+    }
+
+    /* computer screen animation */
+    .boot-screen {
+        opacity: 0;
+        transform: scaleY(0.96);
+        transform-origin: center;
+        animation:
+            screen-on 180ms steps(2, end) 950ms forwards,
+            screen-flicker 300ms steps(4, end) 1130ms;
+    }
+
+    @keyframes screen-on {
+        0% {
+            opacity: 0;
+            transform: scaleY(0.96);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        100% {
+            opacity: 0.92;
+            transform: scaleY(1);
+        }
+    }
+
+    @keyframes screen-flicker {
+        0%,
+        100% {
+            opacity: 0.92;
+        }
+
+        25% {
+            opacity: 0.35;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        75% {
+            opacity: 0.55;
+        }
+    }
+
+    @keyframes terminal-line-in {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+</style>
