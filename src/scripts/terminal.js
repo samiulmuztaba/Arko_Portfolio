@@ -34,7 +34,7 @@ function runHelpAnimation() {
         ["projects", "what I've done with what I can do"],
         ["achievements", "what I've achieved"],
         ["blog", "my articles"],
-        ["cp", "competitive programming"],
+        // ["cp", "competitive programming"],
     ];
 
     commands.forEach(([name, description], index) => {

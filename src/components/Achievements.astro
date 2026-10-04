@@ -1,0 +1,146 @@
+---
+import SecHeading from "./SecHeading.astro";
+---
+
+<div id="achievements" class="terminal-section">
+    <SecHeading heading="achievements" />
+
+    <div class="achievements">
+        <div class="achievement-details first-details">
+            <h3>RJP HSPC 2024</h3>
+            <p>Champion ∙ Senior category</p>
+        </div>
+        <pre class="trophy" aria-hidden="true">
+        ___________
+       /           \
+      /             \
+     |               |
+     |               |
+      \             /
+       \___________/
+
+          |     |
+          |     |
+       ___|_____|___
+     .'             '.
+    /    .-------.    \
+
+   |    /  .---.  \    |
+   |   |  /_   |   |   |
+   |   |    |  |   |   |
+   |   |   _|  |_  |   |
+   |   |  |______| |   |
+    \   \         /   /
+     '.  '-------'  .'
+       '-._______.-'
+</pre>
+        <pre class="medal" aria-hidden="true">
+       _______
+      /       \
+
+     |  |   |  |
+      \_______/
+      .-'"""'-.
+    .'         '.
+
+   |    .---.    |
+   |     ---)    |
+   |    '---'    |
+    \           /
+     '.       .'
+       '-...-'
+</pre>
+        <div class="achievement-details second-details">
+            <h3>RJP Tech Fest Programming Competition 2026</h3>
+            <p>2nd Runner's Up ∙ 9-10 / eq category</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .achievements {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto minmax(0, 1fr);
+        align-items: center;
+        column-gap: 1rem;
+        padding-bottom: 7rem;
+        max-width: 54rem;
+        margin: 1.5rem auto 0;
+    }
+
+    .achievement-details {
+        min-width: 0;
+    }
+
+    .first-details {
+        grid-column: 1;
+        grid-row: 1;
+        padding-right: 1rem;
+        text-align: right;
+    }
+
+    .second-details {
+        grid-column: 4;
+        grid-row: 1;
+        padding-left: 1rem;
+        text-align: left;
+        transform: translateY(7rem);
+    }
+
+    .achievement-details h3 {
+        margin: 0;
+        color: var(--color-text);
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .achievement-details p {
+        margin: 0.4rem 0 0;
+        color: var(--color-text-muted);
+        font-size: 0.85rem;
+    }
+
+    .trophy,
+    .medal {
+        grid-row: 1;
+        margin: 0;
+        color: var(--color-phosphor);
+        font: inherit;
+        line-height: 1.2;
+        white-space: pre;
+    }
+
+    .trophy {
+        grid-column: 2;
+        font-size: clamp(0.55rem, 1.1vw, 0.9rem);
+    }
+
+    .medal {
+        grid-column: 3;
+        justify-self: center;
+        transform: translateY(7rem);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+        .achievements {
+            column-gap: 0.35rem;
+        }
+
+        .first-details {
+            padding-right: 0.35rem;
+        }
+
+        .second-details {
+            padding-left: 0.35rem;
+        }
+
+        .trophy {
+            font-size: 0.48rem;
+        }
+
+        .medal {
+            font-size: 0.7rem;
+        }
+    }
+</style>
