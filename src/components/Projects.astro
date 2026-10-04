@@ -1,6 +1,283 @@
 ---
 import SecHeading from "./SecHeading.astro";
 ---
+
 <div id="projects" class="terminal-section">
-    <SecHeading heading="projects"/>
+    <SecHeading heading="projects" />
+
+    <div class="projects">
+        <article class="project">
+            <div class="project-heading">
+                <h3>EduCoffee</h3>
+                <p class="date">mid-2026</p>
+            </div>
+            <p class="project-description">A platform connecting students and teachers.</p>
+
+            <div class="project-tech" aria-label="Technologies used">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>Supabase</span>
+            </div>
+
+            <p class="project-role">
+                <strong>MY_ROLE =</strong>
+                <span>"Backend and fetching data on frontend."</span>
+            </p>
+            <p class="project-role">
+                <strong>OTHER_CONTRIBUTORS =</strong>
+                <span>"Nabo Kumar Sarkar"</span>
+            </p>
+
+            <div class="project-links" aria-label="Project links">
+                <a
+                    href="https://educoffee360.github.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View EduCoffee live site"
+                    title="View live site"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+                <a
+                    href="https://github.com/educoffee360/educoffee360.github.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View EduCoffee on GitHub"
+                    title="View on GitHub"
+                >
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+            </div>
+        </article>
+        <article class="project">
+            <div class="project-heading">
+                <h3>Lucidraft</h3>
+                <p class="date">Aug-Sep 2025</p>
+            </div>
+            <p class="project-description">Analyzes paper-plane flight for a research project. This is the project I spent most time on so far.</p>
+
+            <div class="project-tech" aria-label="Technologies used">
+                <span>Python</span>
+                <span>OpenCV</span>
+            </div>
+
+            <div class="project-links" aria-label="Project links">
+                <a
+                    href="https://github.com/samiulmuztaba/Lucidraft_Delta-X/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View Lucidraft on GitHub"
+                    title="View on GitHub"
+                >
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+            </div>
+        </article>
+        <article class="project">
+            <div class="project-heading">
+                <h3>New Tab Theme for Devs</h3>
+                <p class="date">Mar 2024</p>
+            </div>
+            <p class="project-description">An extension for changing the new tab look to make it more like a programmer's.</p>
+
+            <div class="project-tech" aria-label="Technologies used">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+            </div>
+
+            <div class="project-links" aria-label="Project links">
+                <a
+                    href="https://samiulmuztaba.github.io/New_Tab_Theme_for_Developers/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View New Tab Theme for Devs live site"
+                    title="View live site"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+                <a
+                    href="https://github.com/samiulmuztaba/New_Tab_Theme_for_Developers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View New Tab Theme for Devs on GitHub"
+                    title="View on GitHub"
+                >
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+            </div>
+        </article>
+        <article class="project">
+            <div class="project-heading">
+                <h3>This Website</h3>
+                <p class="date">Oct 2026</p>
+            </div>
+            <p class="project-description">My personal portfolio, built with Astro and styled as a terminal-inspired interface.</p>
+
+            <div class="project-tech" aria-label="Technologies used">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+                <span>Astro</span>
+            </div>
+
+            <div class="project-links" aria-label="Project links">
+                <a
+                    href="https://github.com/samiulmuztaba/Arko_Portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View this portfolio on GitHub"
+                    title="View on GitHub"
+                >
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+            </div>
+        </article>
+    </div>
 </div>
+
+<style>
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+        align-items: stretch;
+        gap: 1.25rem;
+        width: 100%;
+        max-width: 54rem;
+        margin: 1.25rem auto 0;
+    }
+
+    .project {
+        display: flex;
+        min-height: 14rem;
+        min-width: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+        padding: 1.25rem;
+        border: 2px solid var(--color-text);
+    }
+
+    .project-heading {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    .project h3 {
+        margin: 0;
+        color: var(--color-text);
+        font-size: 1.25rem;
+    }
+
+    .date {
+        flex: 0 0 auto;
+        margin: 0;
+        color: var(--color-text-muted);
+        font-size: 0.75rem;
+        text-align: right;
+    }
+
+    .project-description {
+        margin: 0.6rem 0 1rem;
+        color: var(--color-text-muted);
+        line-height: 1.6;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        color: var(--color-hardware);
+        font-size: 0.85rem;
+    }
+
+    .project-tech span {
+        padding: 0.2rem 0.45rem;
+        border: var(--border-width) solid var(--color-border);
+        transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .project-tech span::before {
+        content: "[";
+        color: inherit;
+    }
+
+    .project-tech span::after {
+        content: "]";
+        color: inherit;
+    }
+
+    .project-tech span:hover {
+        border-color: var(--color-phosphor);
+        background: var(--color-phosphor);
+        color: var(--color-bg);
+    }
+
+    .project-role {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 1rem 0 0;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .project-role strong {
+        color: var(--color-hardware);
+    }
+
+    .project-role span {
+        color: var(--color-text-muted);
+    }
+
+    .project-links {
+        display: flex;
+        align-self: flex-end;
+        gap: 0.5rem;
+        margin-top: auto;
+        padding-top: 1rem;
+    }
+
+    .project-links a {
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border: var(--border-width) solid transparent;
+        color: var(--color-text);
+        text-decoration: none;
+        transition: border-color 160ms ease;
+    }
+
+    .project-links a:hover {
+        border-color: var(--color-phosphor);
+        color: var(--color-text);
+    }
+
+    .project-links i {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+        .project-heading {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .date {
+            text-align: left;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .project-tech span,
+        .project-links a {
+            transition: none;
+        }
+    }
+</style>

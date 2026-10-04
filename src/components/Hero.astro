@@ -168,6 +168,30 @@
         line-height: 1.2;
     }
 
+    @media (max-width: 768px) {
+        .hero {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .name-banner,
+        .crt-computer {
+            font-size: clamp(0.65rem, 2vw, 1rem);
+        }
+
+        .crt-computer {
+            margin-top: 1rem;
+        }
+
+        .screen {
+            left: 50%;
+            width: min(15rem, calc(100vw - 3rem));
+            box-sizing: border-box;
+            transform: translateX(-50%);
+        }
+    }
+
     /* the ASCII ANIMATION! */
     .boot-ascii {
         animation: ascii-boot 900ms steps(8, end) both;

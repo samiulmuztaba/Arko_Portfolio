@@ -61,6 +61,12 @@ body {
   color: var(--color-text);
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+  }
+}
+
 a {
   color: var(--color-link);
 }
